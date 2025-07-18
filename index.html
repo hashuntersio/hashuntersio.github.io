@@ -1,7 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashunters - Let's recover your crypto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div id="vanta-bg"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="1.svg" alt="HASH HUNTERS Logo" class="logo-icon">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#how-we-work" class="nav-link">How We Work</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="/form" class="nav-button recover-btn">LET'S RECOVER</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">HASH HUNTERS</h1>
+            <p class="hero-subtitle">Professional digital investigations and blockchain analysis</p>
+            <p class="hero-description">
+                We specialize in tracking cryptocurrency transactions, 
+                blockchain analysis and digital investigations.
+            </p>
+            <button class="cta-button">
+                <span class="material-icons">security</span>
+                Start Investigation
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About HASH HUNTERS</h2>
+                    <p>We are a team of experts in blockchain and cybersecurity. Our mission is to fight cybercrime through advanced technological analysis.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Completed Investigations</p>
+                        </div>
+                        <div class="stat">
+                            <h3>99%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="team-card">
+                        <span class="material-icons">group</span>
+                        <h3>Expert Team</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">How We Work</h2>
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <span class="material-icons">assignment</span>
+                    </div>
+                    <h3>Initial Consultation</h3>
+                    <p>We start with a detailed consultation to understand your case requirements, gather initial information, and establish the scope of the investigation.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <span class="material-icons">search</span>
+                    </div>
+                    <h3>Digital Investigation</h3>
+                    <p>Our expert team conducts thorough digital investigations using advanced blockchain analysis tools and forensic techniques.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <span class="material-icons">analytics</span>
+                    </div>
+                    <h3>Analysis & Tracking</h3>
+                    <p>We analyze transaction patterns, track cryptocurrency movements, and identify suspicious activities across multiple blockchain networks.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <span class="material-icons">verified</span>
+                    </div>
+                    <h3>Verification & Validation</h3>
+                    <p>All findings are cross-verified using multiple sources and validated through our proprietary verification protocols.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">
+                        <span class="material-icons">description</span>
+                    </div>
+                    <h3>Report Generation</h3>
+                    <p>We compile comprehensive reports with detailed findings, evidence documentation, and actionable recommendations.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-icon">
+                        <span class="material-icons">support_agent</span>
+                    </div>
+                    <h3>Ongoing Support</h3>
+                    <p>We provide continuous support and consultation throughout legal proceedings and follow-up investigations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">track_changes</span>
+                    </div>
+                    <h3>Cryptocurrency Tracking</h3>
+                    <p>We track Bitcoin, Ethereum and other cryptocurrency transactions to identify suspicious activities.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">analytics</span>
+                    </div>
+                    <h3>Blockchain Analysis</h3>
+                    <p>Deep analysis of blockchain chains to detect patterns and anomalies in transactions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">security</span>
+                    </div>
+                    <h3>Digital Investigations</h3>
+                    <p>Comprehensive investigations in cybercrime and cryptocurrency fraud cases.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">report</span>
+                    </div>
+                    <h3>Investigation Reports</h3>
+                    <p>Detailed investigation reports ready for use in legal proceedings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="material-icons">email</span>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@hashhunters.io</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="material-icons">phone</span>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+48 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="material-icons">location_on</span>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Warsaw, Poland</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <span class="material-icons">send</span>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HASH HUNTERS</h3>
+                    <p>Professional digital investigations and blockchain analysis</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Cryptocurrency tracking</a></li>
+                        <li><a href="#services">Blockchain analysis</a></li>
+                        <li><a href="#services">Digital investigations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@hashhunters.io</p>
+                    <p>+48 123 456 789</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HASH HUNTERS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.trunk.min.js"></script>
+    <script>
+      VANTA.TRUNK({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0x0,
+        spacing: 0.50,
+        chaos: 3.50
+      })
+    </script>
 </body>
-</html>
+</html> 
