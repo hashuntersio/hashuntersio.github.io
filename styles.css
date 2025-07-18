@@ -1,10 +1,10 @@
 /* CSS Variables for Color Palette */
 :root {
     --black: #000000;
-    --dark-purple: #2C093F;
-    --purple: #2C093F;
-    --light-purple: #2C093F;
-    --yellow: #F7E8B0;
+    --dark-purple: #52057B;
+    --purple: #892CDC;
+    --light-purple: #BC6FF1;
+    --yellow: #FAEB92;
     --white: #ffffff;
     --gray: #f5f5f5;
     --dark-gray: #333333;
@@ -500,15 +500,15 @@ body {
 }
 
 .blog-btn {
-    background: #2C093F;
-    border-color: #2C093F;
-    box-shadow: 0 4px 15px rgba(44, 9, 63, 0.3);
+    background: linear-gradient(45deg, var(--purple), var(--light-purple));
+    border-color: var(--light-purple);
+    box-shadow: 0 4px 15px rgba(137, 44, 220, 0.3);
 }
 
 .blog-btn:hover {
-    background: #2C093F;
+    background: linear-gradient(45deg, var(--light-purple), var(--purple));
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(44, 9, 63, 0.4);
+    box-shadow: 0 6px 20px rgba(137, 44, 220, 0.4);
 }
 
 .recover-btn {
@@ -599,7 +599,6 @@ body {
     padding: 120px 20px 60px;
     position: relative;
     overflow: hidden;
-    z-index: 1;
 }
 
 .hero::before {
@@ -642,7 +641,7 @@ body {
 
 .hero-description {
     font-size: 1.1rem;
-    color: #F7E8B0;
+    color: var(--white);
     margin-bottom: 2rem;
     opacity: 0.9;
 }
@@ -718,13 +717,11 @@ body {
 
 /* Services Section */
 .services {
-    height: 100vh;
+    min-height: 100vh;
     padding: 120px 0 80px;
     background: var(--background);
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
 .section-title {
@@ -745,7 +742,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: #2C093F;
+    background: linear-gradient(45deg, var(--purple), var(--light-purple));
     border-radius: 2px;
 }
 
@@ -769,13 +766,13 @@ body {
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: #2C093F;
+    border-color: var(--light-purple);
 }
 
 .service-icon {
     width: 80px;
     height: 80px;
-    background: #2C093F;
+    background: linear-gradient(45deg, var(--purple), var(--light-purple));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -791,7 +788,7 @@ body {
 .service-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #F7E8B0;
+    color: var(--white);
     margin-bottom: 1rem;
 }
 
@@ -802,13 +799,11 @@ body {
 
     /* How We Work Section */
 .how-we-work {
-    height: 100vh;
+    min-height: 100vh;
     padding: 120px 0 80px;
-    background: #000000;
+    background: var(--background);
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
     .workflow {
@@ -833,7 +828,7 @@ body {
     .workflow-step:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        border-color: #2C093F;
+        border-color: var(--light-purple);
     }
 
     .step-number {
@@ -843,7 +838,7 @@ body {
         transform: translateX(-50%);
         width: 40px;
         height: 40px;
-        background: #2C093F;
+        background: linear-gradient(45deg, var(--purple), var(--light-purple));
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -851,19 +846,19 @@ body {
         color: var(--white);
         font-weight: 700;
         font-size: 1.2rem;
-        box-shadow: 0 4px 15px rgba(44, 9, 63, 0.3);
+        box-shadow: 0 4px 15px rgba(137, 44, 220, 0.3);
     }
 
     .step-icon {
         width: 80px;
         height: 80px;
-        background: #2C093F;
+        background: linear-gradient(45deg, var(--dark-purple), var(--purple));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 1rem auto 1.5rem;
-        box-shadow: 0 8px 25px rgba(44, 9, 63, 0.3);
+        box-shadow: 0 8px 25px rgba(82, 5, 123, 0.3);
     }
 
     .step-icon .material-icons {
@@ -874,7 +869,7 @@ body {
     .workflow-step h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #F7E8B0;
+    color: var(--white);
     margin-bottom: 1rem;
 }
 
@@ -917,7 +912,7 @@ body {
 .stat {
     text-align: center;
     padding: 1.5rem;
-    background: #2C093F;
+    background: linear-gradient(135deg, var(--purple), var(--light-purple));
     border-radius: 15px;
     color: var(--white);
 }
@@ -934,12 +929,12 @@ body {
 }
 
 .team-card {
-    background: #2C093F;
+    background: linear-gradient(135deg, var(--dark-purple), var(--purple));
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
     color: var(--white);
-    box-shadow: 0 15px 35px rgba(44, 9, 63, 0.3);
+    box-shadow: 0 15px 35px rgba(82, 5, 123, 0.3);
 }
 
 .team-card .material-icons {
@@ -955,13 +950,11 @@ body {
 
 /* Contact Section */
 .contact {
-    height: 100vh;
+    min-height: 100vh;
     padding: 120px 0 80px;
-    background: #000000;
+    background: var(--background);
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
 .contact-content {
@@ -990,13 +983,13 @@ body {
 
 .contact-item .material-icons {
     font-size: 2rem;
-    color: #2C093F;
+    color: var(--purple);
 }
 
 .contact-item h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #F7E8B0;
+    color: var(--white);
     margin-bottom: 0.5rem;
 }
 
@@ -1033,8 +1026,8 @@ body {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #F7E8B0;
-    box-shadow: 0 0 0 3px rgba(247, 232, 176, 0.2);
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(250, 235, 146, 0.2);
 }
 
 .form-group label {
@@ -1055,7 +1048,7 @@ body {
     top: -10px;
     left: 10px;
     font-size: 0.8rem;
-    color: #F7E8B0;
+    color: var(--yellow);
     font-weight: 600;
 }
 
@@ -1118,7 +1111,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: #F7E8B0;
+    color: var(--yellow);
 }
 
     .footer-bottom {
@@ -1171,14 +1164,14 @@ body {
     }
 
     .blog-image {
-        background: #2C093F;
+        background: linear-gradient(45deg, var(--purple), var(--light-purple));
         padding: 2rem;
         text-align: center;
     }
 
     .blog-image .material-icons {
         font-size: 3rem;
-        color: #F7E8B0;
+        color: var(--yellow);
     }
 
     .blog-text {
@@ -1204,7 +1197,7 @@ body {
     }
 
     .read-more {
-        color: #F7E8B0;
+        color: var(--yellow);
         text-decoration: none;
         font-weight: 600;
         transition: color 0.3s ease;
@@ -1254,10 +1247,10 @@ body {
     }
 
     .form-section h3 {
-        color: #F7E8B0;
+        color: var(--yellow);
         font-size: 1.3rem;
         margin-bottom: 1.5rem;
-        border-bottom: 2px solid rgba(247, 232, 176, 0.3);
+        border-bottom: 2px solid rgba(250, 235, 146, 0.3);
         padding-bottom: 0.5rem;
     }
 
@@ -1280,8 +1273,8 @@ body {
 
     .form-group select:focus {
         outline: none;
-        border-color: #F7E8B0;
-        box-shadow: 0 0 0 3px rgba(247, 232, 176, 0.2);
+        border-color: var(--yellow);
+        box-shadow: 0 0 0 3px rgba(250, 235, 146, 0.2);
     }
 
     .checkbox-group {
@@ -1294,7 +1287,7 @@ body {
     .checkbox-group input[type="checkbox"] {
         width: 20px;
         height: 20px;
-        accent-color: #F7E8B0;
+        accent-color: var(--yellow);
     }
 
     .checkbox-group label {
