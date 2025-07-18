@@ -1,41 +1,81 @@
+// Section Navigation System
+let currentSection = 0;
+const sections = ['home', 'how-we-work', 'services', 'contact'];
+const sectionContainer = document.getElementById('section-container');
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const navButtons = document.querySelector('.nav-buttons');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    navButtons.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+// Close mobile menu when clicking on a button
+document.querySelectorAll('.nav-section-btn').forEach(btn => btn.addEventListener('click', () => {
     hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    navButtons.classList.remove('active');
 }));
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+// Section navigation
+document.querySelectorAll('.nav-section-btn').forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        navigateToSection(index);
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(44, 9, 63, 0.8)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.background = 'rgba(44, 9, 63, 0.5)';
-        navbar.style.backdropFilter = 'none';
+function navigateToSection(sectionIndex) {
+    if (sectionIndex < 0 || sectionIndex >= sections.length) return;
+    
+    currentSection = sectionIndex;
+    const translateY = -sectionIndex * 100;
+    sectionContainer.style.transform = `translateY(${translateY}vh)`;
+    
+    // Update active button
+    document.querySelectorAll('.nav-section-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === sectionIndex);
+    });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        navigateToSection(Math.max(0, currentSection - 1));
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        navigateToSection(Math.min(sections.length - 1, currentSection + 1));
+    }
+});
+
+// Mouse wheel navigation (disabled)
+document.addEventListener('wheel', (e) => {
+    e.preventDefault();
+}, { passive: false });
+
+// Touch navigation (disabled)
+let touchStartY = 0;
+document.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+}, { passive: false });
+
+document.addEventListener('touchend', (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const diff = touchStartY - touchEndY;
+    
+    if (Math.abs(diff) > 50) { // Minimum swipe distance
+        if (diff > 0) {
+            // Swipe up - next section
+            navigateToSection(Math.min(sections.length - 1, currentSection + 1));
+        } else {
+            // Swipe down - previous section
+            navigateToSection(Math.max(0, currentSection - 1));
+        }
     }
 });
 
@@ -210,14 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const ctaButton = document.querySelector('.cta-button');
 if (ctaButton) {
     ctaButton.addEventListener('click', () => {
-        // Scroll to contact section
-        const contactSection = document.querySelector('#contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        // Navigate to contact section
+        navigateToSection(3); // Contact section index
     });
 }
 
@@ -309,7 +343,7 @@ function updateLogo() {
             logo.src = '2.svg';
             logo.classList.add('logo-icon-small');
         } else {
-            logo.src = '1.svg';
+            logo.src = '3.svg';
             logo.classList.remove('logo-icon-small');
         }
     }
