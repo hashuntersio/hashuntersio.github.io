@@ -3,26 +3,597 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HASH HUNTERS - Let's Recover</title>
+    <title>hashunters // let's recover</title>
+    <style>
+        /* CRITICAL: Apply hero gradient to form page - before external CSS loads */
+        
+        /* CSS Variables for gradient */
+        :root {
+            --background: hsla(272, 86%, 9%, 1) !important;
+        }
+        
+        /* Animated Gradient Properties */
+        @property --c-0 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(28, 0%, 0%, 1)
+        }
+        
+        @property --s-start-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 2%
+        }
+        
+        @property --s-end-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 60%
+        }
+        
+        @property --y-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 23%
+        }
+        
+        @property --x-0 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 23%
+        }
+        
+        @property --x-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 13%
+        }
+        
+        @property --s-start-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 9%
+        }
+        
+        @property --s-end-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 58.89119889119889%
+        }
+        
+        @property --c-1 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(279.1525423728814, 92%, 25%, 1)
+        }
+        
+        @property --y-1 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 16%
+        }
+        
+        @property --y-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 89%
+        }
+        
+        @property --x-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 14%
+        }
+        
+        @property --s-start-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 9%
+        }
+        
+        @property --s-end-2 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 58.89119889119889%
+        }
+        
+        @property --c-2 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(319.4117647058824, 0%, 0%, 1)
+        }
+        
+        @property --y-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 89%
+        }
+        
+        @property --x-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 14%
+        }
+        
+        @property --s-start-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 9%
+        }
+        
+        @property --s-end-3 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 58.89119889119889%
+        }
+        
+        @property --c-3 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(278.8888888888889, 75%, 14%, 1)
+        }
+        
+        @property --y-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 89%
+        }
+        
+        @property --x-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 14%
+        }
+        
+        @property --s-start-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 9%
+        }
+        
+        @property --s-end-4 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 58.89119889119889%
+        }
+        
+        @property --c-4 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(279.1525423728814, 92%, 25%, 1)
+        }
+        
+        @property --y-5 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 89%
+        }
+        
+        @property --x-5 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 14%
+        }
+        
+        @property --s-start-5 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 9%
+        }
+        
+        @property --s-end-5 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 58.89119889119889%
+        }
+        
+        @property --c-5 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(279.1525423728814, 0%, 0%, 1)
+        }
+        
+        @property --y-6 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 47%
+        }
+        
+        @property --x-6 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 97%
+        }
+        
+        @property --s-start-6 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 4.5991935069083505%
+        }
+        
+        @property --s-end-6 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 60%
+        }
+        
+        @property --c-6 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(278.8888888888889, 0%, 0%, 1)
+        }
+        
+        @property --y-7 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 47%
+        }
+        
+        @property --x-7 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 97%
+        }
+        
+        @property --s-start-7 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 4.5991935069083505%
+        }
+        
+        @property --s-end-7 {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 60%
+        }
+        
+        @property --c-7 {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: hsla(279.1525423728814, 0%, 0%, 1)
+        }
+        
+        /* Hero gradient animation keyframes */
+        @keyframes hero-gradient-animation {
+            0% {
+                --c-0: hsla(28, 0%, 0%, 1);
+                --x-0: 23%;
+                --s-start-0: 2%;
+                --s-end-0: 60%;
+                --y-0: 23%;
+                --x-1: 13%;
+                --c-1: hsla(278.8888888888889, 75%, 14%, 1);
+                --y-1: 16%;
+                --s-start-1: 9%;
+                --s-end-1: 58.89119889119889%;
+                --s-start-2: 9%;
+                --s-end-2: 58.89119889119889%;
+                --y-2: 89%;
+                --x-2: 14%;
+                --c-2: hsla(319.4117647058824, 0%, 0%, 1);
+                --s-start-3: 9%;
+                --s-end-3: 58.89119889119889%;
+                --y-3: 89%;
+                --x-3: 14%;
+                --c-3: hsla(279.1525423728814, 92%, 25%, 1);
+                --s-start-4: 9%;
+                --s-end-4: 58.89119889119889%;
+                --y-4: 89%;
+                --x-4: 14%;
+                --c-4: hsla(279.1525423728814, 92%, 25%, 1);
+                --s-start-5: 9%;
+                --s-end-5: 58.89119889119889%;
+                --y-5: 89%;
+                --x-5: 14%;
+                --c-5: hsla(279.1525423728814, 0%, 0%, 1);
+                --s-start-6: 4.5991935069083505%;
+                --s-end-6: 60%;
+                --y-6: 47%;
+                --x-6: 97%;
+                --c-6: hsla(278.8888888888889, 0%, 0%, 1);
+            }
+
+            50% {
+                --c-0: hsla(51.34615384615385, 91%, 77%, 1);
+                --x-0: 92%;
+                --s-start-0: 4%;
+                --s-end-0: 73%;
+                --y-0: 91%;
+                --x-1: 95%;
+                --c-1: hsla(279.1525423728814, 92%, 25%, 1);
+                --y-1: 18%;
+                --s-start-1: 4%;
+                --s-end-1: 60%;
+                --s-start-2: 4.5991935069083505%;
+                --s-end-2: 60%;
+                --y-2: 47%;
+                --x-2: 97%;
+                --c-2: hsla(278.8888888888889, 75%, 14%, 1);
+                --s-start-3: 4.5991935069083505%;
+                --s-end-3: 60%;
+                --y-3: 47%;
+                --x-3: 97%;
+                --c-3: hsla(278.8888888888889, 75%, 14%, 1);
+                --s-start-4: 4.5991935069083505%;
+                --s-end-4: 60%;
+                --y-4: 47%;
+                --x-4: 97%;
+                --c-4: hsla(278.8888888888889, 75%, 14%, 1);
+                --s-start-5: 4.5991935069083505%;
+                --s-end-5: 60%;
+                --y-5: 47%;
+                --x-5: 97%;
+                --c-5: hsla(278.8888888888889, 0%, 0%, 1);
+                --s-start-6: 4.5991935069083505%;
+                --s-end-6: 60%;
+                --y-6: 47%;
+                --x-6: 97%;
+                --c-6: hsla(279.1525423728814, 92%, 25%, 1);
+            }
+
+            100% {
+                --s-start-3: 4.5991935069083505%;
+                --s-end-3: 60%;
+                --y-3: 47%;
+                --x-3: 97%;
+                --c-3: hsla(279.1525423728814, 92%, 25%, 1);
+                --s-start-4: 4.5991935069083505%;
+                --s-end-4: 60%;
+                --y-4: 47%;
+                --x-4: 97%;
+                --c-4: hsla(279.1525423728814, 0%, 0%, 1);
+                --s-start-5: 4.5991935069083505%;
+                --s-end-5: 60%;
+                --y-5: 47%;
+                --x-5: 97%;
+                --c-5: hsla(279.1525423728814, 0%, 0%, 1);
+            }
+        }
+        
+        /* Apply hero gradient to body */
+        html, body {
+            background-color: hsla(272, 86%, 9%, 1) !important;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2000 2000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)), radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4)), radial-gradient(circle at var(--x-5) var(--y-5), var(--c-5) var(--s-start-5), transparent var(--s-end-5)), radial-gradient(circle at var(--x-6) var(--y-6), var(--c-6) var(--s-start-6), transparent var(--s-end-6)), radial-gradient(circle at var(--x-7) var(--y-7), var(--c-7) var(--s-start-7), transparent var(--s-end-7)) !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            animation: hero-gradient-animation 10s linear infinite alternate !important;
+            background-blend-mode: overlay, normal, overlay, normal, normal, normal, normal, normal, normal !important;
+        }
+        
+        /* Override all possible background elements to use gradient */
+        .hero, .main-container, .section-container, .services, .how-we-work, .contact, .about, .recovery-header, .recovery-form-section {
+            background: transparent !important;
+        }
+        
+        /* Remove any pseudo-elements that might have backgrounds */
+        .hero::before, .hero::after, body::before, body::after {
+            display: none !important;
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Hero gradient animation keyframes */
+        @keyframes hero-gradient-animation {
+            0% {
+                --c-0: hsla(28, 0%, 0%, 1);
+                --x-0: 23%;
+                --s-start-0: 2%;
+                --s-end-0: 60%;
+                --y-0: 23%;
+                --x-1: 13%;
+                --c-1: hsla(278.8888888888889, 75%, 14%, 1);
+                --y-1: 16%;
+                --s-start-1: 9%;
+                --s-end-1: 58.89119889119889%;
+                --s-start-2: 9%;
+                --s-end-2: 58.89119889119889%;
+                --y-2: 89%;
+                --x-2: 14%;
+                --c-2: hsla(319.4117647058824, 0%, 0%, 1);
+                --s-start-3: 9%;
+                --s-end-3: 58.89119889119889%;
+                --y-3: 89%;
+                --x-3: 14%;
+                --c-3: hsla(279.1525423728814, 92%, 25%, 1);
+                --s-start-4: 9%;
+                --s-end-4: 58.89119889119889%;
+                --y-4: 89%;
+                --x-4: 14%;
+                --c-4: hsla(279.1525423728814, 92%, 25%, 1);
+                --s-start-5: 9%;
+                --s-end-5: 58.89119889119889%;
+                --y-5: 89%;
+                --x-5: 14%;
+                --c-5: hsla(279.1525423728814, 0%, 0%, 1);
+                --s-start-6: 4.5991935069083505%;
+                --s-end-6: 60%;
+                --y-6: 47%;
+                --x-6: 97%;
+                --c-6: hsla(278.8888888888889, 0%, 0%, 1);
+            }
+
+            50% {
+                --c-0: hsla(51.34615384615385, 91%, 77%, 1);
+                --x-0: 92%;
+                --s-start-0: 4%;
+                --s-end-0: 73%;
+                --y-0: 91%;
+                --x-1: 95%;
+                --c-1: hsla(279.1525423728814, 92%, 25%, 1);
+                --y-1: 18%;
+                --s-start-1: 4%;
+                --s-end-1: 60%;
+                --s-start-2: 4.5991935069083505%;
+                --s-end-2: 60%;
+                --y-2: 47%;
+                --x-2: 97%;
+                --c-2: hsla(278.8888888888889, 75%, 14%, 1);
+                --s-start-3: 4.5991935069083505%;
+                --s-end-3: 60%;
+                --y-3: 47%;
+                --x-3: 97%;
+                --c-3: hsla(278.8888888888889, 75%, 14%, 1);
+                --s-start-4: 4.5991935069083505%;
+                --s-end-4: 60%;
+                --y-4: 47%;
+                --x-4: 97%;
+                --c-4: hsla(278.8888888888889, 75%, 14%, 1);
+                --s-start-5: 4.5991935069083505%;
+                --s-end-5: 60%;
+                --y-5: 47%;
+                --x-5: 97%;
+                --c-5: hsla(278.8888888888889, 0%, 0%, 1);
+                --s-start-6: 4.5991935069083505%;
+                --s-end-6: 60%;
+                --y-6: 47%;
+                --x-6: 97%;
+                --c-6: hsla(279.1525423728814, 92%, 25%, 1);
+            }
+
+            100% {
+                --s-start-3: 4.5991935069083505%;
+                --s-end-3: 60%;
+                --y-3: 47%;
+                --x-3: 97%;
+                --c-3: hsla(279.1525423728814, 92%, 25%, 1);
+                --s-start-4: 4.5991935069083505%;
+                --s-end-4: 60%;
+                --y-4: 47%;
+                --x-4: 97%;
+                --c-4: hsla(279.1525423728814, 0%, 0%, 1);
+                --s-start-5: 4.5991935069083505%;
+                --s-end-5: 60%;
+                --y-5: 47%;
+                --x-5: 97%;
+                --c-5: hsla(279.1525423728814, 0%, 0%, 1);
+            }
+        }
+        
+        /* Override any overflow hidden from main CSS */
+        html, body, .main-container, .section-container, .hero, .services, .contact, .how-we-work {
+            overflow: visible !important;
+            overflow-y: scroll !important;
+        }
+        
+        /* Force scrolling to work on form page */
+        .main-container {
+            height: auto !important;
+            overflow: visible !important;
+            position: static !important;
+        }
+        
+        .section-container {
+            height: auto !important;
+            position: static !important;
+            transform: none !important;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            overflow-y: scroll !important;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-y: scroll !important;
+            overflow: visible !important;
+            scroll-behavior: auto !important;
+        }
+        
+
+        
+        .recovery-form-section {
+            padding: 80px 0 120px;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .recovery-form {
+            background: rgba(137, 44, 220, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 100px;
+        }
+        
+        /* Remove footer space completely */
+        .footer {
+            display: none !important;
+        }
+        
+        /* Override section backgrounds to show gradient */
+        .services, .how-we-work, .contact, .about {
+            background: transparent !important;
+        }
+        
+        /* Ensure main container and section container don't override gradient */
+        .main-container, .section-container {
+            background: transparent !important;
+        }
+        
+        /* Additional fixes for scrolling */
+        .recovery-form-section {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        
+        /* Ensure body allows scrolling */
+        body {
+            position: relative !important;
+            height: auto !important;
+            min-height: 100vh !important;
+        }
+        
+        /* Webkit scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(137, 44, 220, 0.5);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(137, 44, 220, 0.7);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
+                <div class="nav-container">
             <div class="nav-logo">
-                <img src="1.svg" alt="HASH HUNTERS Logo" class="logo-icon">
+                <img src="3.svg" alt="HASH HUNTERS Logo" class="logo-icon">
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="index.html#how-we-work" class="nav-link">How We Work</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="/form" class="nav-button recover-btn">LET'S RECOVER</a></li>
-            </ul>
+            <div class="nav-buttons">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#how-we-work" class="nav-link">How We Work</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="form.html" class="nav-button recover-btn">LET'S RECOVER</a>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -142,7 +713,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="submit-recovery-btn">
+                                        <button type="submit" class="submit-recovery-btn">
                         <span class="material-icons">send</span>
                         Submit Recovery Request
                     </button>
@@ -150,34 +721,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>HASH HUNTERS</h3>
-                    <p>Professional digital investigations and blockchain analysis</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="index.html#services">Cryptocurrency tracking</a></li>
-                        <li><a href="index.html#services">Blockchain analysis</a></li>
-                        <li><a href="index.html#services">Digital investigations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>info@hashhunters.io</p>
-                    <p>+48 123 456 789</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 HASH HUNTERS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>

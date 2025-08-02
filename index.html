@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashunters - Let's recover your crypto</title>
+    <title>hashunters // let's recover</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,12 +16,12 @@
                 <img src="3.svg" alt="HASH HUNTERS Logo" class="logo-icon">
             </div>
             <div class="nav-buttons">
-                <button class="nav-section-btn active" data-section="home">Home</button>
-                <button class="nav-section-btn" data-section="how-we-work">How We Work</button>
-                <button class="nav-section-btn" data-section="services">Services</button>
-                <button class="nav-section-btn" data-section="contact">Contact</button>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#how-we-work" class="nav-link">How We Work</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
                 <a href="blog.html" class="nav-link">Blog</a>
-                <a href="/form" class="nav-button recover-btn">LET'S RECOVER</a>
+                <a href="form.html" class="nav-button recover-btn">LET'S RECOVER</a>
             </div>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -41,14 +41,14 @@
             <div class="hero-logo">
                 <img src="1.svg" alt="HASH HUNTERS Logo" class="hero-logo-icon">
             </div>
-            <p class="hero-subtitle">Professional digital investigations and blockchain analysis</p>
+            <p class="hero-subtitle">Lost Crypto? Let's Find It.</p>
             <p class="hero-description">
-                We specialize in tracking cryptocurrency transactions, 
-                blockchain analysis and digital investigations.
+                We're a team of blockchain analysts, legal experts, and investigators with years of experience in tracing and recovering stolen crypto assets. If you've been a victim of a scam, fraud, or suspicious crypto activity - you can reach out to us.<br><br>
+                <strong>No upfront fees. No obligations. Just real help</strong>
             </p>
             <button class="cta-button">
                 <span class="material-icons">security</span>
-                Start Investigation
+                Get in touch with us
             </button>
         </div>
     </section>
@@ -88,10 +88,11 @@
     <!-- How We Work Section -->
     <section id="how-we-work" class="how-we-work">
         <div class="container">
-            <h2 class="section-title">How We Work</h2>
+            <h2 class="section-title how-we-work-title">how we work...</h2>
             <div class="workflow">
                 <div class="workflow-step">
-                    <div class="step-number">1</div>
+                    <div class="glow-overlay"></div>
+                    <div class="particles"></div>
                     <div class="step-icon">
                         <span class="material-icons">assignment</span>
                     </div>
@@ -99,7 +100,8 @@
                     <p>We start with a detailed consultation to understand your case requirements, gather initial information, and establish the scope of the investigation.</p>
                 </div>
                 <div class="workflow-step">
-                    <div class="step-number">2</div>
+                    <div class="glow-overlay"></div>
+                    <div class="particles"></div>
                     <div class="step-icon">
                         <span class="material-icons">search</span>
                     </div>
@@ -107,23 +109,8 @@
                     <p>Our expert team conducts thorough digital investigations using advanced blockchain analysis tools and forensic techniques.</p>
                 </div>
                 <div class="workflow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <span class="material-icons">analytics</span>
-                    </div>
-                    <h3>Analysis & Tracking</h3>
-                    <p>We analyze transaction patterns, track cryptocurrency movements, and identify suspicious activities across multiple blockchain networks.</p>
-                </div>
-                <div class="workflow-step">
-                    <div class="step-number">4</div>
-                    <div class="step-icon">
-                        <span class="material-icons">verified</span>
-                    </div>
-                    <h3>Verification & Validation</h3>
-                    <p>All findings are cross-verified using multiple sources and validated through our proprietary verification protocols.</p>
-                </div>
-                <div class="workflow-step">
-                    <div class="step-number">5</div>
+                    <div class="glow-overlay"></div>
+                    <div class="particles"></div>
                     <div class="step-icon">
                         <span class="material-icons">description</span>
                     </div>
@@ -131,7 +118,8 @@
                     <p>We compile comprehensive reports with detailed findings, evidence documentation, and actionable recommendations.</p>
                 </div>
                 <div class="workflow-step">
-                    <div class="step-number">6</div>
+                    <div class="glow-overlay"></div>
+                    <div class="particles"></div>
                     <div class="step-icon">
                         <span class="material-icons">support_agent</span>
                     </div>
@@ -145,7 +133,7 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <h2 class="section-title services-title">services we offer...</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -175,6 +163,20 @@
                     <h3>Investigation Reports</h3>
                     <p>Detailed investigation reports ready for use in legal proceedings.</p>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">business</span>
+                    </div>
+                    <h3>Outsourcing Investigations</h3>
+                    <p>Collaboration with other companies providing investigation services as outsourcing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <span class="material-icons">verified</span>
+                    </div>
+                    <h3>Wallet Cleanliness Verification</h3>
+                    <p>Confirmation of wallet cleanliness and verification of transaction history.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -182,42 +184,39 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title contact-title">contact us...</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <span class="material-icons">email</span>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@hashhunters.io</p>
-                        </div>
+                        <h3><span class="material-icons">email</span> Email</h3>
+                        <p>investigations@hashunters.io</p>
                     </div>
                     <div class="contact-item">
-                        <span class="material-icons">phone</span>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+48 123 456 789</p>
-                        </div>
+                        <h3><span class="material-icons">telegram</span> Telegram</h3>
+                        <p>@hashunters</p>
                     </div>
                     <div class="contact-item">
-                        <span class="material-icons">location_on</span>
-                        <div>
-                            <h3>Address</h3>
-                            <p>Warsaw, Poland</p>
-                        </div>
+                        <h3><span class="material-icons">business</span> LinkedIn</h3>
+                        <p><a href="https://linkedin.com/company/hashunters" target="_blank">linkedin.com/company/hashunters</a></p>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="056d89ad-e1ec-44ce-b9d3-521febd31e38">
+                    
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
                     <div class="form-group">
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Full Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Message</label>
                     </div>
                     <button type="submit" class="submit-button">
@@ -235,7 +234,6 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>HASH HUNTERS</h3>
-                    <p>Professional digital investigations and blockchain analysis</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
@@ -247,8 +245,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>info@hashhunters.io</p>
-                    <p>+48 123 456 789</p>
+                    <p>investigations@hashunters.io</p>
                 </div>
             </div>
             <div class="footer-bottom">

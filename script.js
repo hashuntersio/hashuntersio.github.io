@@ -18,12 +18,14 @@ document.querySelectorAll('.nav-section-btn').forEach(btn => btn.addEventListene
     navButtons.classList.remove('active');
 }));
 
-// Section navigation
-document.querySelectorAll('.nav-section-btn').forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        navigateToSection(index);
+// Section navigation - only on index.html
+if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+    document.querySelectorAll('.nav-section-btn').forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            navigateToSection(index);
+        });
     });
-});
+}
 
 function navigateToSection(sectionIndex) {
     if (sectionIndex < 0 || sectionIndex >= sections.length) return;
@@ -38,46 +40,52 @@ function navigateToSection(sectionIndex) {
     });
 }
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        e.preventDefault();
-        navigateToSection(Math.max(0, currentSection - 1));
-    } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        e.preventDefault();
-        navigateToSection(Math.min(sections.length - 1, currentSection + 1));
-    }
-});
-
-// Mouse wheel navigation (disabled)
-document.addEventListener('wheel', (e) => {
-    e.preventDefault();
-}, { passive: false });
-
-// Touch navigation (disabled)
-let touchStartY = 0;
-document.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-});
-
-document.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-}, { passive: false });
-
-document.addEventListener('touchend', (e) => {
-    const touchEndY = e.changedTouches[0].clientY;
-    const diff = touchStartY - touchEndY;
-    
-    if (Math.abs(diff) > 50) { // Minimum swipe distance
-        if (diff > 0) {
-            // Swipe up - next section
-            navigateToSection(Math.min(sections.length - 1, currentSection + 1));
-        } else {
-            // Swipe down - previous section
+// Keyboard navigation - only on index.html
+if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            e.preventDefault();
             navigateToSection(Math.max(0, currentSection - 1));
+        } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            navigateToSection(Math.min(sections.length - 1, currentSection + 1));
         }
-    }
-});
+    });
+}
+
+// Mouse wheel navigation (disabled) - only on index.html
+if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+    document.addEventListener('wheel', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+}
+
+// Touch navigation (disabled) - only on index.html
+if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        const diff = touchStartY - touchEndY;
+        
+        if (Math.abs(diff) > 50) { // Minimum swipe distance
+            if (diff > 0) {
+                // Swipe up - next section
+                navigateToSection(Math.min(sections.length - 1, currentSection + 1));
+            } else {
+                // Swipe down - previous section
+                navigateToSection(Math.max(0, currentSection - 1));
+            }
+        }
+    });
+}
 
 // Form submission handling
 const contactForm = document.querySelector('.contact-form');
@@ -102,19 +110,34 @@ if (contactForm) {
             return;
         }
         
-        // Simulate form submission
+        // Update submit button
         const submitButton = this.querySelector('.submit-button');
         const originalText = submitButton.innerHTML;
         submitButton.innerHTML = '<span class="material-icons">hourglass_empty</span>Sending...';
         submitButton.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
-            showNotification('Message sent successfully!', 'success');
-            this.reset();
+        // Submit to Web3Forms
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showNotification('Message sent successfully! We will get back to you soon.', 'success');
+                this.reset();
+            } else {
+                showNotification('Failed to send message. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('Failed to send message. Please try again.', 'error');
+        })
+        .finally(() => {
             submitButton.innerHTML = originalText;
             submitButton.disabled = false;
-        }, 2000);
+        });
     });
 }
 
