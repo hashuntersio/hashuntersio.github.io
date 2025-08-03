@@ -53,11 +53,12 @@ if (window.location.pathname.includes('index.html') || window.location.pathname.
     });
 }
 
-// Mouse wheel navigation (disabled) - only on index.html
+// Mouse wheel navigation (enabled) - only on index.html
 if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
     document.addEventListener('wheel', (e) => {
-        e.preventDefault();
-    }, { passive: false });
+        // Allow normal scrolling
+        // e.preventDefault(); // Removed to enable scrolling
+    }, { passive: true });
 }
 
 // Touch navigation (disabled) - only on index.html

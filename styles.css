@@ -356,13 +356,24 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Manrope', sans-serif;
     line-height: 1.6;
     color: var(--white);
     background-color: var(--background);
-    overflow: hidden;
-    scroll-behavior: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -370,17 +381,20 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* Navigation */
 .navbar {
-    background: rgba(44, 9, 63, 0.5);
+    background: rgba(44, 9, 63, 1);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Navigation Buttons */
@@ -419,6 +433,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-buttons {
@@ -548,24 +564,27 @@ body {
 
 /* Main Container */
 .main-container {
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow: visible;
+    overflow-x: hidden;
     position: relative;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Section Container */
 .section-container {
-    height: 100vh;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    transition: transform 0.5s ease-in-out;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     --c-0: hsla(28, 0%, 0%, 1);
     --x-0: 23%;
     --y-0: 23%;
@@ -599,6 +618,9 @@ body {
     padding: 120px 20px 60px;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero::before {
@@ -611,16 +633,24 @@ body {
     text-align: center;
     position: relative;
     z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .hero-logo {
     margin-bottom: 1rem;
     text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-logo-icon {
     height: 120px;
     width: auto;
+    max-width: 100%;
     filter: brightness(0) saturate(100%) invert(89%) sepia(15%) saturate(638%) hue-rotate(359deg) brightness(103%) contrast(94%);
 }
 
@@ -630,6 +660,9 @@ body {
     color: var(--white);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-subtitle {
@@ -637,6 +670,9 @@ body {
     color: var(--yellow);
     margin-bottom: 1rem;
     font-weight: 500;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-description {
@@ -647,6 +683,8 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .cta-button {
@@ -659,13 +697,13 @@ body {
     border-radius: 4px;
     text-transform: none;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(247, 232, 176, 0.3);
-    margin-left: auto;
-    margin-right: auto;
+    text-decoration: none;
+    width: auto;
 }
 
 .cta-button:hover {
@@ -723,7 +761,6 @@ body {
 
 /* Services Section */
 .services {
-    min-height: 100vh;
     padding: 120px 0 80px;
     background: #0D0014;
     display: flex;
@@ -757,6 +794,13 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
 }
 
 .service-card {
@@ -854,27 +898,27 @@ body {
 }
 
 .service-card:nth-child(1):hover {
-    background: rgba(44, 9, 63, 1);
+    background: #FAEB92;
 }
 
 .service-card:nth-child(2):hover {
-    background: rgba(188, 111, 241, 1);
+    background: #FAEB92;
 }
 
 .service-card:nth-child(3):hover {
-    background: rgba(137, 44, 220, 1);
+    background: #FAEB92;
 }
 
 .service-card:nth-child(4):hover {
-    background: rgba(188, 111, 241, 1);
+    background: #FAEB92;
 }
 
 .service-card:nth-child(5):hover {
-    background: rgba(82, 5, 123, 1);
+    background: #FAEB92;
 }
 
 .service-card:nth-child(6):hover {
-    background: rgba(44, 9, 63, 1);
+    background: #FAEB92;
 }
 
 .service-icon {
@@ -923,6 +967,7 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.1);
     text-shadow: 0 0 20px rgba(250, 235, 146, 0.8);
+    color: #2C093F;
 }
 
 .service-card p {
@@ -952,11 +997,11 @@ body {
 .service-card:hover p {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+    color: #2C093F;
 }
 
     /* How We Work Section */
 .how-we-work {
-    min-height: 100vh;
     padding: 120px 0 80px;
     background: #0D0014;
     display: flex;
@@ -1059,21 +1104,21 @@ body {
         animation: particleFloat 4s linear infinite;
     }
 
-    /* Zmiana przezroczystości przy hover */
+    /* Zmiana koloru tła na żółty przy hover */
     .workflow-step:nth-child(1):hover {
-        background: rgba(44, 9, 63, 1);
+        background: #FAEB92;
     }
 
     .workflow-step:nth-child(2):hover {
-        background: rgba(82, 5, 123, 1);
+        background: #FAEB92;
     }
 
     .workflow-step:nth-child(3):hover {
-        background: rgba(137, 44, 220, 1);
+        background: #FAEB92;
     }
 
     .workflow-step:nth-child(4):hover {
-        background: rgba(188, 111, 241, 1);
+        background: #FAEB92;
     }
 
     /* Znak wodny - cyfra 1 w lewym górnym prostokącie */
@@ -1083,7 +1128,7 @@ body {
         bottom: 0;
         left: 0;
         transform: none;
-        font-size: 18rem;
+        font-size: clamp(6rem, 12vw, 18rem);
         font-weight: 900;
         color: rgba(44, 9, 63, 0.3);
         z-index: -1;
@@ -1099,7 +1144,7 @@ body {
         bottom: 0;
         left: 0;
         transform: none;
-        font-size: 18rem;
+        font-size: clamp(6rem, 12vw, 18rem);
         font-weight: 900;
         color: rgba(82, 5, 123, 0.3);
         z-index: -1;
@@ -1115,7 +1160,7 @@ body {
         bottom: 0;
         left: 0;
         transform: none;
-        font-size: 18rem;
+        font-size: clamp(6rem, 12vw, 18rem);
         font-weight: 900;
         color: rgba(137, 44, 220, 0.3);
         z-index: -1;
@@ -1131,7 +1176,7 @@ body {
         bottom: 0;
         left: 0;
         transform: none;
-        font-size: 18rem;
+        font-size: clamp(6rem, 12vw, 18rem);
         font-weight: 900;
         color: rgba(188, 111, 241, 0.3);
         z-index: -1;
@@ -1147,7 +1192,7 @@ body {
         top: 50%;
         right: 0;
         transform: translateY(-50%);
-        font-size: 12rem;
+        font-size: clamp(4rem, 8vw, 12rem);
         z-index: -1;
         font-family: 'Material Icons';
         pointer-events: none;
@@ -1320,6 +1365,7 @@ body {
         opacity: 0;
         transform: translate(-50%, -50%) scale(1.1);
         text-shadow: 0 0 20px rgba(250, 235, 146, 0.8);
+        color: #2C093F;
     }
 
     .workflow-step .step-icon {
@@ -1346,6 +1392,7 @@ body {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
         text-shadow: 0 0 15px rgba(250, 235, 146, 0.6);
+        color: #2C093F;
     }
 
     .workflow-step:hover h3 {
@@ -1358,7 +1405,6 @@ body {
 
 /* About Section */
 .about {
-    min-height: 100vh;
     padding: 120px 0 80px;
     background: var(--background);
     display: flex;
@@ -1427,11 +1473,39 @@ body {
 
 /* Contact Section */
 .contact {
-    min-height: 100vh;
-    padding: 120px 0 80px;
-    background: #0D0014;
+    padding: 120px 0 150px;
+    --c-0: hsla(28, 0%, 0%, 1);
+    --x-0: 23%;
+    --y-0: 23%;
+    --x-1: 13%;
+    --c-1: hsla(278.8888888888889, 75%, 14%, 1);
+    --y-1: 16%;
+    --y-2: 89%;
+    --x-2: 14%;
+    --c-2: hsla(319.4117647058824, 0%, 0%, 1);
+    --y-3: 89%;
+    --x-3: 14%;
+    --c-3: hsla(279.1525423728814, 92%, 25%, 1);
+    --y-4: 89%;
+    --x-4: 14%;
+    --c-4: hsla(279.1525423728814, 92%, 25%, 1);
+    --y-5: 89%;
+    --x-5: 14%;
+    --c-5: hsla(279.1525423728814, 0%, 0%, 1);
+    --y-6: 47%;
+    --x-6: 97%;
+    --c-6: hsla(278.8888888888889, 0%, 0%, 1);
+    --y-7: 47%;
+    --x-7: 97%;
+    --c-7: hsla(279.1525423728814, 0%, 0%, 1);
+    background-color: hsla(272, 86%, 9%, 1);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2000 2000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3)), radial-gradient(circle at var(--x-4) var(--y-4), var(--c-4) var(--s-start-4), transparent var(--s-end-4)), radial-gradient(circle at var(--x-5) var(--y-5), var(--c-5) var(--s-start-5), transparent var(--s-end-5)), radial-gradient(circle at var(--x-6) var(--y-6), var(--c-6) var(--s-start-6), transparent var(--s-end-6)), radial-gradient(circle at var(--x-7) var(--y-7), var(--c-7) var(--s-start-7), transparent var(--s-end-7));
+    animation: hero-gradient-animation 10s linear infinite alternate;
+    background-blend-mode: overlay, normal, overlay, normal, normal, normal, normal, normal, normal;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-content {
@@ -1963,10 +2037,18 @@ body {
         max-width: 200px;
     }
 
+    .hero {
+        padding: 120px 1rem 60px;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .hero-title {
@@ -1976,6 +2058,18 @@ body {
     .hero-subtitle {
         font-size: 1.2rem;
     }
+    
+    .hero-logo-icon {
+        height: 80px;
+        width: auto;
+    }
+    
+    .hero-description {
+        max-width: 100%;
+        padding: 0 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
     .about-content {
         grid-template-columns: 1fr;
@@ -1984,7 +2078,30 @@ body {
 
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1rem;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        padding: 1rem;
+        min-height: 60px;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .contact-item h3 {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    
+    .contact-item p {
+        font-size: 0.9rem;
     }
 
     .stats {
@@ -1992,11 +2109,39 @@ body {
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
     .workflow {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .workflow-step {
+        min-height: 160px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .workflow-step .particles {
+        background-size: 25px 25px, 15px 15px, 20px 20px;
+    }
+    
+    .workflow-step h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .workflow-step p {
+        font-size: 0.8rem;
+        width: 95%;
+        line-height: 1.4;
+    }
+    
+    .step-icon {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
     }
 
     .section-title {
@@ -2026,6 +2171,10 @@ body {
     .blog-soon p {
         font-size: 1rem;
     }
+
+    .workflow-step .step-icon {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2036,20 +2185,427 @@ body {
     .hero-subtitle {
         font-size: 1rem;
     }
+    
+    .hero-logo-icon {
+        height: 60px;
+        width: auto;
+    }
+    
+    .hero {
+        padding: 120px 0.5rem 60px;
+    }
+    
+    .hero-content {
+        padding: 0 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-description {
+        padding: 0 0.5rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
     .cta-button {
         padding: 12px 24px;
         font-size: 1rem;
+        width: auto;
+        max-width: 250px;
     }
 
     .service-card {
         padding: 1.5rem;
+        min-height: 200px;
+    }
+    
+    .service-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .service-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
     }
 
     .contact-form {
         padding: 1.5rem;
     }
-} 
+    
+    .contact-info {
+        gap: 0.5rem;
+    }
+    
+    .contact-item {
+        padding: 0.75rem;
+        min-height: 50px;
+    }
+    
+    .contact-item h3 {
+        font-size: 0.9rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.8rem;
+    }
+    
+    .workflow {
+        gap: 0.75rem;
+    }
+    
+    .contact-info {
+        gap: 0.4rem;
+    }
+    
+    .contact-item {
+        padding: 0.5rem;
+        min-height: 45px;
+    }
+    
+    .contact-item h3 {
+        font-size: 0.85rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.75rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .service-card {
+        padding: 1.25rem;
+        min-height: 180px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .service-card p {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+    
+    .workflow-step {
+        min-height: 140px;
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .workflow-step .particles {
+        background-size: 20px 20px, 12px 12px, 16px 16px;
+    }
+    
+    .workflow-step h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .workflow-step p {
+        font-size: 0.75rem;
+        width: 95%;
+        line-height: 1.3;
+    }
+    
+    .step-icon {
+        display: block;
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-logo-icon {
+        height: 50px;
+        width: auto;
+    }
+    
+    .hero {
+        padding: 120px 0.25rem 60px;
+    }
+    
+    .hero-content {
+        padding: 0 0.25rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-description {
+        padding: 0 0.25rem;
+        font-size: 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        max-width: 200px;
+    }
+    
+    .workflow {
+        gap: 0.5rem;
+    }
+    
+    .contact-info {
+        gap: 0.3rem;
+    }
+    
+    .contact-item {
+        padding: 0.4rem;
+        min-height: 40px;
+    }
+    
+    .contact-item h3 {
+        font-size: 0.8rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.7rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .service-card {
+        padding: 1rem;
+        min-height: 160px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .service-card p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    
+    .workflow-step {
+        min-height: 120px;
+        padding: 1rem 0.5rem;
+    }
+    
+    .workflow-step .particles {
+        background-size: 15px 15px, 10px 10px, 12px 12px;
+    }
+    
+    .workflow-step h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .workflow-step p {
+        font-size: 0.7rem;
+        width: 95%;
+        line-height: 1.2;
+    }
+    
+    .step-icon {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .hero-logo-icon {
+        height: 40px;
+        width: auto;
+    }
+    
+    .hero {
+        padding: 120px 0.15rem 60px;
+    }
+    
+    .hero-content {
+        padding: 0 0.15rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-description {
+        padding: 0 0.15rem;
+        font-size: 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cta-button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        max-width: 180px;
+    }
+    
+    .workflow {
+        gap: 0.4rem;
+    }
+    
+    .contact-info {
+        gap: 0.25rem;
+    }
+    
+    .contact-item {
+        padding: 0.3rem;
+        min-height: 35px;
+    }
+    
+    .contact-item h3 {
+        font-size: 0.75rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.65rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.4rem;
+    }
+    
+    .service-card {
+        padding: 0.75rem;
+        min-height: 140px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .service-card p {
+        font-size: 0.65rem;
+        line-height: 1.1;
+    }
+    
+    .workflow-step {
+        min-height: 100px;
+        padding: 0.75rem 0.4rem;
+    }
+    
+    .workflow-step .particles {
+        background-size: 12px 12px, 8px 8px, 10px 10px;
+    }
+    
+    .workflow-step h3 {
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .workflow-step p {
+        font-size: 0.65rem;
+        width: 95%;
+        line-height: 1.1;
+    }
+    
+    .step-icon {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+@media (max-width: 280px) {
+    .cta-button {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        max-width: 160px;
+    }
+    
+    .workflow {
+        gap: 0.3rem;
+    }
+    
+    .contact-info {
+        gap: 0.2rem;
+    }
+    
+    .contact-item {
+        padding: 0.25rem;
+        min-height: 30px;
+    }
+    
+    .contact-item h3 {
+        font-size: 0.7rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.6rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.3rem;
+    }
+    
+    .service-card {
+        padding: 0.5rem;
+        min-height: 120px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.75rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .service-card p {
+        font-size: 0.6rem;
+        line-height: 1.1;
+    }
+    
+    .workflow-step {
+        min-height: 80px;
+        padding: 0.5rem 0.3rem;
+    }
+    
+    .workflow-step .particles {
+        background-size: 10px 10px, 6px 6px, 8px 8px;
+    }
+    
+    .workflow-step h3 {
+        font-size: 0.7rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .workflow-step p {
+        font-size: 0.6rem;
+        width: 95%;
+        line-height: 1.1;
+    }
+    
+    .step-icon {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+}
 
 .how-we-work .section-title {
     text-align: left;
@@ -2185,4 +2741,30 @@ body {
 .service-card:hover,
 .contact-item:hover {
     animation-play-state: paused;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(44, 9, 63, 0.3);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--purple), var(--light-purple));
+    border-radius: 6px;
+    border: 2px solid rgba(44, 9, 63, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--light-purple), var(--purple));
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) rgba(44, 9, 63, 0.3);
 } 
