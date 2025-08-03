@@ -3,6 +3,11 @@ let currentSection = 0;
 const sections = ['home', 'how-we-work', 'services', 'contact'];
 const sectionContainer = document.getElementById('section-container');
 
+// Check if sectionContainer exists before using it
+if (!sectionContainer) {
+    console.log('Section container not found - navigation disabled');
+}
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navButtons = document.querySelector('.nav-buttons');
@@ -29,6 +34,7 @@ if (window.location.pathname.includes('index.html') || window.location.pathname.
 
 function navigateToSection(sectionIndex) {
     if (sectionIndex < 0 || sectionIndex >= sections.length) return;
+    if (!sectionContainer) return; // Don't navigate if container doesn't exist
     
     currentSection = sectionIndex;
     const translateY = -sectionIndex * 100;
@@ -68,9 +74,10 @@ if (window.location.pathname.includes('index.html') || window.location.pathname.
         touchStartY = e.touches[0].clientY;
     });
 
-    document.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-    }, { passive: false });
+    // Allow normal touch scrolling - don't prevent default
+    // document.addEventListener('touchmove', (e) => {
+    //     e.preventDefault();
+    // }, { passive: false });
 
     document.addEventListener('touchend', (e) => {
         const touchEndY = e.changedTouches[0].clientY;

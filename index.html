@@ -5,33 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hashunters // let's recover</title>
     <style>
-        /* Mobile scrolling fixes - similar to form.html */
-        html, body {
-            overflow-x: hidden !important;
+        /* CRITICAL: Mobile scrolling fixes from form.html */
+        
+        /* Override any overflow hidden from main CSS */
+        html, body, .main-container, .section-container, .hero, .services, .contact, .how-we-work {
+            overflow: visible !important;
             overflow-y: scroll !important;
-            -webkit-overflow-scrolling: touch !important;
-            scroll-behavior: auto !important;
+            touch-action: pan-y !important;
         }
         
-        body {
-            position: relative !important;
-            height: auto !important;
-            min-height: 100vh !important;
-        }
-        
-        /* Override main container and section container for mobile */
+        /* Force scrolling to work on index page */
         .main-container {
             height: auto !important;
             overflow: visible !important;
             position: static !important;
-            min-height: auto !important;
         }
         
         .section-container {
             height: auto !important;
             position: static !important;
             transform: none !important;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            height: 100%;
+            overflow-y: scroll !important;
+            overflow-x: hidden !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-y: scroll !important;
             overflow: visible !important;
+            scroll-behavior: auto !important;
+            position: relative !important;
+            height: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            touch-action: pan-y !important;
         }
         
         /* Ensure all sections allow proper scrolling */
@@ -40,12 +59,52 @@
             position: relative !important;
         }
         
+        /* CRITICAL: Override hero overflow hidden from main CSS */
+        .hero {
+            overflow: visible !important;
+        }
+        
+        /* CRITICAL: Override service-card overflow hidden from main CSS */
+        .service-card {
+            overflow: visible !important;
+        }
+        
+        /* Ensure main container and section container don't override anything */
+        .main-container, .section-container {
+            background: transparent !important;
+        }
+        
+        /* Additional fixes for scrolling */
+        .hero {
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        
+        /* Webkit scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(137, 44, 220, 0.5);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(137, 44, 220, 0.7);
+        }
+        
         /* Mobile-specific fixes */
         @media (max-width: 768px) {
             html, body {
                 overflow-x: hidden !important;
                 overflow-y: scroll !important;
                 -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-y !important;
             }
             
             .main-container, .section-container {
@@ -66,6 +125,7 @@
                 overflow-x: hidden !important;
                 overflow-y: scroll !important;
                 -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-y !important;
             }
         }
         
@@ -74,6 +134,7 @@
                 overflow-x: hidden !important;
                 overflow-y: scroll !important;
                 -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-y !important;
             }
         }
         
@@ -82,6 +143,7 @@
                 overflow-x: hidden !important;
                 overflow-y: scroll !important;
                 -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-y !important;
             }
         }
     </style>
@@ -111,10 +173,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Main Container -->
-    <div class="main-container">
-        <div class="section-container" id="section-container">
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -308,8 +366,6 @@
             </div>
         </div>
     </section>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
