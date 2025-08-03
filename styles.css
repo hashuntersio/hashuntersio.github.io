@@ -377,7 +377,7 @@ body {
     background-color: var(--background);
     overflow-y: auto;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -574,10 +574,10 @@ body {
 .main-container {
     min-height: 100vh;
     overflow: visible;
-    overflow-x: hidden;
     position: relative;
     width: 100%;
     max-width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Section Container */
@@ -587,7 +587,7 @@ body {
     top: 0;
     left: 0;
     max-width: 100%;
-    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Hero Section */
@@ -2002,11 +2002,25 @@ body {
         -webkit-overflow-scrolling: touch !important;
         -webkit-transform: translateZ(0) !important;
         transform: translateZ(0) !important;
+        scroll-behavior: auto !important;
     }
     
     * {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
+    }
+}
+
+/* Mobile scroll fixes */
+@media (max-width: 768px) {
+    html, body {
+        scroll-behavior: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .main-container, .section-container {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: visible !important;
     }
 }
 
@@ -2242,6 +2256,11 @@ body {
         animation: none !important;
     }
     
+    .main-container, .section-container {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: visible !important;
+    }
+    
     .hero-content {
         padding: 0 0.5rem;
         width: 100%;
@@ -2401,6 +2420,11 @@ body {
         animation: none !important;
     }
     
+    .main-container, .section-container {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: visible !important;
+    }
+    
     .hero-content {
         padding: 0 0.25rem;
         width: 100%;
@@ -2523,6 +2547,11 @@ body {
         animation: none !important;
     }
     
+    .main-container, .section-container {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: visible !important;
+    }
+    
     .hero-content {
         padding: 0 0.15rem;
         width: 100%;
@@ -2635,6 +2664,11 @@ body {
         padding: 5px 10px;
         font-size: 0.7rem;
         max-width: 160px;
+    }
+    
+    .main-container, .section-container {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: visible !important;
     }
     
     .workflow {
