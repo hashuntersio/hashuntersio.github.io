@@ -4,6 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hashunters // let's recover</title>
+    <style>
+        /* Mobile scrolling fixes - similar to form.html */
+        html, body {
+            overflow-x: hidden !important;
+            overflow-y: scroll !important;
+            -webkit-overflow-scrolling: touch !important;
+            scroll-behavior: auto !important;
+        }
+        
+        body {
+            position: relative !important;
+            height: auto !important;
+            min-height: 100vh !important;
+        }
+        
+        /* Override main container and section container for mobile */
+        .main-container {
+            height: auto !important;
+            overflow: visible !important;
+            position: static !important;
+            min-height: auto !important;
+        }
+        
+        .section-container {
+            height: auto !important;
+            position: static !important;
+            transform: none !important;
+            overflow: visible !important;
+        }
+        
+        /* Ensure all sections allow proper scrolling */
+        .hero, .services, .how-we-work, .contact, .about {
+            overflow: visible !important;
+            position: relative !important;
+        }
+        
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            .main-container, .section-container {
+                height: auto !important;
+                overflow: visible !important;
+                position: static !important;
+                transform: none !important;
+            }
+            
+            .hero {
+                min-height: 100vh !important;
+                overflow: visible !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -227,8 +308,8 @@
             </div>
         </div>
     </section>
-
-
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

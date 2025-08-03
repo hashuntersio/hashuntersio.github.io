@@ -13,6 +13,15 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            overflow-x: hidden !important;
+            overflow-y: scroll !important;
+            -webkit-overflow-scrolling: touch !important;
+            scroll-behavior: auto !important;
+        }
+        
+        body {
+            position: relative !important;
+            height: auto !important;
         }
         
         /* Override any other background styles */
@@ -26,6 +35,8 @@
             align-items: center;
             justify-content: center;
             padding: 120px 0 80px;
+            overflow: visible !important;
+            position: relative !important;
         }
         
         .blog-soon {
@@ -37,6 +48,39 @@
             font-weight: 700;
             color: #FAEB92;
             margin: 0;
+        }
+        
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: scroll !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
         }
     </style>
 </head>
