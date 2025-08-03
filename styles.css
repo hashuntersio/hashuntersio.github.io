@@ -360,14 +360,11 @@ html, body {
     overflow-x: hidden;
     max-width: 100%;
     -webkit-overflow-scrolling: touch;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
 
 html {
     overflow-x: hidden;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -377,11 +374,8 @@ body {
     background-color: var(--background);
     overflow-y: auto;
     overflow-x: hidden;
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    position: relative;
 }
 
 .container {
@@ -574,10 +568,10 @@ body {
 .main-container {
     min-height: 100vh;
     overflow: visible;
+    overflow-x: hidden;
     position: relative;
     width: 100%;
     max-width: 100%;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Section Container */
@@ -587,7 +581,7 @@ body {
     top: 0;
     left: 0;
     max-width: 100%;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
 }
 
 /* Hero Section */
@@ -625,6 +619,7 @@ body {
     align-items: center;
     padding: 120px 20px 60px;
     position: relative;
+    overflow: hidden;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -1996,34 +1991,6 @@ body {
         box-shadow: 0 12px 35px rgba(250, 235, 146, 0.4);
     }
 
-/* iOS Safari specific fixes for smooth scrolling */
-@supports (-webkit-touch-callout: none) {
-    html, body {
-        -webkit-overflow-scrolling: touch !important;
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-        scroll-behavior: auto !important;
-    }
-    
-    * {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-}
-
-/* Mobile scroll fixes */
-@media (max-width: 768px) {
-    html, body {
-        scroll-behavior: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-    
-    .main-container, .section-container {
-        -webkit-overflow-scrolling: touch !important;
-        overflow-x: visible !important;
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .logo-icon {
@@ -2072,13 +2039,6 @@ body {
         max-width: 200px;
     }
 
-    /* iOS scroll fix */
-    html, body {
-        -webkit-overflow-scrolling: touch !important;
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-    }
-    
     .hero {
         padding: 120px 1rem 60px;
         background: #170122 !important;
@@ -2242,23 +2202,11 @@ body {
         width: auto;
     }
     
-    /* iOS scroll fix */
-    html, body {
-        -webkit-overflow-scrolling: touch !important;
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-    }
-    
     .hero {
         padding: 120px 0.5rem 60px;
         background: #170122 !important;
         background-image: none !important;
         animation: none !important;
-    }
-    
-    .main-container, .section-container {
-        -webkit-overflow-scrolling: touch !important;
-        overflow-x: visible !important;
     }
     
     .hero-content {
@@ -2406,23 +2354,11 @@ body {
         width: auto;
     }
     
-    /* iOS scroll fix */
-    html, body {
-        -webkit-overflow-scrolling: touch !important;
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-    }
-    
     .hero {
         padding: 120px 0.25rem 60px;
         background: #170122 !important;
         background-image: none !important;
         animation: none !important;
-    }
-    
-    .main-container, .section-container {
-        -webkit-overflow-scrolling: touch !important;
-        overflow-x: visible !important;
     }
     
     .hero-content {
@@ -2533,23 +2469,11 @@ body {
         width: auto;
     }
     
-    /* iOS scroll fix */
-    html, body {
-        -webkit-overflow-scrolling: touch !important;
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-    }
-    
     .hero {
         padding: 120px 0.15rem 60px;
         background: #170122 !important;
         background-image: none !important;
         animation: none !important;
-    }
-    
-    .main-container, .section-container {
-        -webkit-overflow-scrolling: touch !important;
-        overflow-x: visible !important;
     }
     
     .hero-content {
@@ -2647,13 +2571,6 @@ body {
 }
 
 @media (max-width: 280px) {
-    /* iOS scroll fix */
-    html, body {
-        -webkit-overflow-scrolling: touch !important;
-        -webkit-transform: translateZ(0) !important;
-        transform: translateZ(0) !important;
-    }
-    
     .contact {
         background: #170122 !important;
         background-image: none !important;
@@ -2664,11 +2581,6 @@ body {
         padding: 5px 10px;
         font-size: 0.7rem;
         max-width: 160px;
-    }
-    
-    .main-container, .section-container {
-        -webkit-overflow-scrolling: touch !important;
-        overflow-x: visible !important;
     }
     
     .workflow {
